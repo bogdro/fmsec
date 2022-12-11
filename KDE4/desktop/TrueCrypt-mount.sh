@@ -4,6 +4,10 @@
 #
 # Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
+# This file is part of FMSec (File Manager SECurity), a set of extensions
+#  to file managers.
+# FMSec homepage: https://fmsec.sourceforge.io/
+#
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
 #  as published by the Free Software Foundation; either version 2
@@ -49,4 +53,7 @@ else
 fi;
 
 [[ ! -d $d ]] && (mkdir -p $d || exit 3)
-[[ -d $d ]] && truecrypt -u $v $d
+#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
+[[ -d $d ]] && truecrypt $v $d
+
+exit $?

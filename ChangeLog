@@ -1,3 +1,34 @@
+2019-05-01	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.0
+	  KDE5 support.
+	* KDE[34]/desktop/*, KDE[34]/*.sh, install-all.sh, uninstall-all.sh:
+	  Added a note about FMSec and its homepage. Removed unnecessary
+	  trailing newlines.
+	* KDE[34]/*.sh: added explicit exit commands with exit codes.
+	* KDE[34]/desktop/TrueCrypt-mount.sh: removed the "-u" parameter from
+	  the TrueCrypt call (it was used only in early TrueCrypt versions).
+	  Fixed the name of the script. Added the exit command.
+	* KDE5/*: added files from Konq5Sec-2019-05-01 and modified to match
+	  FMSec.
+	* KDE5/desktop/*.desktop: updated the files to support KDE5: new Icon
+	  values
+	* KDE5/common.sh: a new file with values common to the installer
+	  and uninstaller scripts
+	* KDE5/install.sh: copied from KDE4/install.sh. Changed the
+	  destination path to match KDE5's default. Not checking for $KDEHOME
+	  anymore. Added details in case of partial failures of the script.
+	* KDE5/uninstall.sh: renamed from KDE4/uninstall.sh. Changed the
+	  destination path to match KDE5's default. Not checking for $KDEHOME
+	  anymore.
+	* KDE5/common.sh, KDE5/desktop/veracrypt-mount.desktop,
+	  KDE5/desktop/VeraCrypt-mount.sh,
+	  KDE5/desktop/veracrypt-umount.desktop: added new menu items and
+	  scripts for mounting and un-mounting volumes with VeraCrypt
+	  (a replacement for TrueCrypt).
+	* (2021-11-20) install-all.sh, uninstall-all.sh: added KDE5 support.
+	* (2021-11-20) INSTALL-FMSec.txt: updated with KDE5.
+
 2013-10-28	Bogdan Drozdowski <bogdandr@op.pl>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.5.

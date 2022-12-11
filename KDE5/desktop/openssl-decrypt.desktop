@@ -1,8 +1,6 @@
-#!/bin/sh
+# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
-#
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -25,35 +23,24 @@
 # 		Boston, MA 02110-1301
 # 		USA
 #
+#
+# Seems that the icons must be present in /usr/share/icons/hicolor/16x16
+#
 
-if ( test "x$1" = "x" ); then
+[Desktop Entry]
+Name=Decrypt using OpenSSL
+Name[pl]=Odszyfruj używając OpenSSL
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+MimeType=application/octet-stream;
+Actions=SSLdec;
+Icon=kdenlive-unlock
 
-	echo -n "Enter TrueCrypt volume path: "
-	read v
-
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
-
-		exit 1
-	fi
-else
-	v=$1
-fi;
-
-if ( test "x$2" = "x" ); then
-
-	echo -n "Enter destination directory: "
-	read d
-
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
-
-		exit 2
-	fi
-else
-	d=$2
-fi;
-
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
-
-exit $?
+[Desktop Action SSLdec]
+Name=Decrypt using OpenSSL
+Name[pl]=Odszyfruj używając OpenSSL
+Icon=kdenlive-unlock
+Exec=xterm -e "$HOME/bin/Openssl-decrypt.sh %f; exit"
+#dbus-send --session --type=method_call --dest=org.kde.kdesktop /KDesktopIface org.kde.KDesktopIface.popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"
+#dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"

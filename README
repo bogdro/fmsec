@@ -12,6 +12,8 @@ The operations are:
 - wiping the free space on a filesystem using WipeFreeSpace
   (https://wipefreespace.sourceforge.io/).
 
+FMSec homepage: https://fmsec.sourceforge.io/
+
 ----------------------------------------------------------------
 
 FMSec supports the following file managers in the following
@@ -22,3 +24,7 @@ desktop environments:
 2. KDE 4.x:
 	- Konqueror
 	- Dolphin
+3. KDE 5.x:
+	- Konqueror
+	- Dolphin
+	- Krusader

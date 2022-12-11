@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# "Mount using VeraCrypt" Konqueror/Dolphin context menu entry - program.
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -28,7 +28,7 @@
 
 if ( test "x$1" = "x" ); then
 
-	echo -n "Enter TrueCrypt volume path: "
+	echo -n "Enter VeraCrypt volume path: "
 	read v
 
 	if ( test "x$v" = "x" || ! test -e "$v" ); then
@@ -53,7 +53,6 @@ else
 fi;
 
 [[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
+[[ -d $d ]] && veracrypt $v $d
 
 exit $?

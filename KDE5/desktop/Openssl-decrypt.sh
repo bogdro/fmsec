@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry - program.
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -28,32 +28,15 @@
 
 if ( test "x$1" = "x" ); then
 
-	echo -n "Enter TrueCrypt volume path: "
-	read v
-
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
-
-		exit 1
-	fi
-else
-	v=$1
+	exit 1;
 fi;
 
-if ( test "x$2" = "x" ); then
+name=`echo $1 | sed 's/\.enc$//'`
 
-	echo -n "Enter destination directory: "
-	read d
+if ( test -f $name ); then
 
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
+	name="$name.dec"
+fi
 
-		exit 2
-	fi
-else
-	d=$2
-fi;
-
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
-
+openssl enc -bf -a -in $1 -d -out $name
 exit $?

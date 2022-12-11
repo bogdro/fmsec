@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# FMSec KDE5 installer & uninstaller common data.
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,34 +26,40 @@
 # 		USA
 #
 
-if ( test "x$1" = "x" ); then
+if ( test -z "$HOME" ); then
 
-	echo -n "Enter TrueCrypt volume path: "
-	read v
+	if ( test -d "/home/`whoami`" ); then
 
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
-
+		HOME=/home/`whoami`
+	else
+		echo "Set 'HOME' to your home directory and re-run this script."
 		exit 1
 	fi
-else
-	v=$1
-fi;
+fi
 
-if ( test "x$2" = "x" ); then
+DESTPATH="$HOME/.local/share/kservices5"
 
-	echo -n "Enter destination directory: "
-	read d
+unalias mkdir >/dev/null 2>&1
+unalias cp >/dev/null 2>&1
+unalias rm >/dev/null 2>&1
 
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
+FILES="safeRemoveDir.desktop		\
+	safeRemove.desktop		\
+	Shred-rec.sh			\
+	openssl-decrypt.desktop		\
+	Openssl-decrypt.sh		\
+	openssl-encrypt.desktop		\
+	truecrypt-mount.desktop		\
+	truecrypt-umount.desktop	\
+	TrueCrypt-mount.sh		\
+	veracrypt-mount.desktop		\
+	veracrypt-umount.desktop	\
+	VeraCrypt-mount.sh		\
+	wipefreespace.desktop		\
+	"
 
-		exit 2
-	fi
-else
-	d=$2
-fi;
-
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
-
-exit $?
+SHFILES="Shred-rec.sh			\
+	Openssl-decrypt.sh		\
+	TrueCrypt-mount.sh		\
+	VeraCrypt-mount.sh		\
+	"

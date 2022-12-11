@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# FMSec KDE5 uninstaller
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,34 +26,22 @@
 # 		USA
 #
 
-if ( test "x$1" = "x" ); then
+. common.sh
 
-	echo -n "Enter TrueCrypt volume path: "
-	read v
+for i in $FILES; do
+	rm -f "$DESTPATH/$i"
+done;
 
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
+unset DESTPATH
+unset i
+unset FILES
 
-		exit 1
-	fi
-else
-	v=$1
-fi;
+for i in $SHFILES; do
 
-if ( test "x$2" = "x" ); then
+	[[ -L "$HOME/bin/$i" ]] && rm -f "$HOME/bin/$i"
+done;
 
-	echo -n "Enter destination directory: "
-	read d
+unset SHFILES
 
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
-
-		exit 2
-	fi
-else
-	d=$2
-fi;
-
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
-
-exit $?
+echo "Uninstall OK. Restart Konqueror/Dolphin/Krusader."
+exit 0

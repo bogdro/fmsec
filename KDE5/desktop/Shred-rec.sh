@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Safe remove directory (recurse)" Konqueror context menu entry - program.
+# "Safe remove directory (recurse)" Konqueror/Dolphin context menu entry - program.
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -25,6 +25,7 @@
 # 		Boston, MA 02110-1301
 # 		USA
 #
+
 
 if ( test $# -lt 1 ); then
 
@@ -87,4 +88,5 @@ echo "$*" | sed 's/~/\n/g' | while read; do directory=$REPLY
 	fi # test for empty directory
 
 done;	# all-directory loop
+
 exit 0

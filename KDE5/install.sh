@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# FMSec KDE5 installer
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,34 +26,49 @@
 # 		USA
 #
 
-if ( test "x$1" = "x" ); then
+. common.sh
 
-	echo -n "Enter TrueCrypt volume path: "
-	read v
+mkdir -p "$DESTPATH" 2>/dev/null
+cp -f desktop/* "$DESTPATH"
+unset FILES
 
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
+if ( test -e "$HOME/bin" && ! test -d "$HOME/bin" ); then
 
-		exit 1
+	unset DESTPATH
+
+	echo "$HOME/bin exists, but is not a directory. Fix this. Install partially failed (*.sh scripts not installed)."
+	exit 2
+fi
+
+[[ ! -e "$HOME/bin" ]] && mkdir "$HOME/bin"
+
+if ( ! test -d "$HOME/bin" ); then
+
+	unset DESTPATH
+
+	echo "$HOME/bin can't be created. Install partially failed."
+	exit 3
+fi
+
+for i in $SHFILES; do
+
+	[[ ! -e "$HOME/bin/$i" ]] && ln -s "$DESTPATH/$i" "$HOME/bin/$i"
+done;
+
+unset DESTPATH
+
+for i in $SHFILES; do
+
+	if (! test -e "$HOME/bin/$i"); then
+
+		unset SHFILES
+		echo "Install partially failed: '$HOME/bin/$i' not created."
+		exit 4
 	fi
-else
-	v=$1
-fi;
 
-if ( test "x$2" = "x" ); then
+done;
 
-	echo -n "Enter destination directory: "
-	read d
+unset SHFILES
 
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
-
-		exit 2
-	fi
-else
-	d=$2
-fi;
-
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
-[[ -d $d ]] && truecrypt $v $d
-
-exit $?
+echo "Install OK. Restart Konqueror/Dolphin/Krusader."
+exit 0
