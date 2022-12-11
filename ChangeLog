@@ -1,3 +1,19 @@
+2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec (then - KonqSec) version 1.0
+	  Renamed "wipe.desktop" to "safeRemove.desktop". Fixes in shell
+	  script names. Fixes in the installer and uninstaller.
+	* KonqSecInstall.sh: corrected checking for the user's and user's KDE
+	  home directory. Make the paths whitespace-safe. Unsetting the
+	  variables before exit.
+	* KonqSecUninstall.sh: corrected the script name. Corrected checking
+	  for the user's and user's KDE home directory. Make the paths
+	  whitespace-safe. Unsetting the variables before exit.
+	* openssl-decrypt.desktop, safeRemoveDir.desktop,
+	  truecrypt-mount.desktop: corrected the called scripts' names.
+	* safeRemove.desktop: renamed the file from "wipe.desktop". Added the
+	  "-u" parameter to "shred".
+
 2010-01-24	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec) version 0.9
