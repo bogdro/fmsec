@@ -1,4 +1,4 @@
-# "Mount using TrueCrypt" Konqueror context menu entry
+# "Mount using TrueCrypt" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,4 +31,4 @@ Icon=encrypted
 [Desktop Action mountTC]
 Name=Mount using TrueCrypt
 Icon=encrypted
-Exec=xterm -e "$HOME/bin/Truecrypt-mount.sh %f; exit"
+Exec=bash -c "$HOME/bin/Truecrypt-mount.sh %f; exit"

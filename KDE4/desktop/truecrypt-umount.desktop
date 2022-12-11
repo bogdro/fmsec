@@ -1,4 +1,4 @@
-# "Umount using TrueCrypt" Konqueror context menu entry
+# "Umount using TrueCrypt" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,4 +31,4 @@ Icon=decrypted
 [Desktop Action umountTC]
 Name=Umount using TrueCrypt
 Icon=decrypted
-Exec=xterm -e "truecrypt -d %f; exit"
+Exec=bash -c "truecrypt -d %f; exit"

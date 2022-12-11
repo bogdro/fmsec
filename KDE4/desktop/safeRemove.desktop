@@ -1,4 +1,4 @@
-# "Safe remove" Konqueror context menu entry
+# "Safe remove" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,4 +31,4 @@ Icon=remove
 [Desktop Action safeRemove]
 Name=Safe remove
 Icon=remove
-Exec=xterm -e "shred -u %F; exit"
+Exec=bash -c "shred -u %F; exit"

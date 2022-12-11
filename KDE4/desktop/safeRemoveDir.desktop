@@ -1,4 +1,4 @@
-# "Safe remove directory (recurse)" Konqueror context menu entry
+# "Safe remove directory (recurse)" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,7 +31,7 @@ Icon=remove
 [Desktop Action safeRemoveDir]
 Name=Safe remove directory (recurse)
 Icon=remove
-Exec=xterm -e "$HOME/bin/Shred-rec.sh %f; exit"
+Exec=bash -c "$HOME/bin/Shred-rec.sh %f; exit"
 
 #"/bin/sh -c find %F -type f -exec shred -u '{}' \; && rm -fr %F"
 # find ... \; && for i in `seq 1 10`; do echo $i; done

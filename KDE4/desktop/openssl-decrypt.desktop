@@ -1,4 +1,4 @@
-# "Decrypt using OpenSSL" Konqueror context menu entry
+# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,7 +31,6 @@ Icon=encrypted
 [Desktop Action SSLdec]
 Name=Decrypt using OpenSSL
 Icon=encrypted
-Exec=xterm -e "$HOME/bin/Openssl-decrypt.sh %f; exit"
+Exec=bash -c "$HOME/bin/Openssl-decrypt.sh %f; exit"
 #dbus-send --session --type=method_call --dest=org.kde.kdesktop /KDesktopIface org.kde.KDesktopIface.popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"
 #dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"
-

@@ -1,4 +1,4 @@
-# "Wipe free space" Konqueror context menu entry
+# "Wipe free space" Konqueror/Dolphin context menu entry
 #
 # Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -31,5 +31,4 @@ Icon=eraser
 [Desktop Action wipefreespace]
 Name=Wipe free space
 Icon=eraser
-Exec=xterm -e "wipefreespace %F; exit"
-
+Exec=bash -c "wipefreespace %F; exit"

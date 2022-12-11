@@ -1,3 +1,10 @@
+2012-03-18	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec) version 2.2.
+	  Simplify the KDE4 desktop files.
+	* *.desktop: Changed "xterm" to "bash". Started using the name
+	  "Dolphin" for the file manager.
+
 2010-05-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.1.
