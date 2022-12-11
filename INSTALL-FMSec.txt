@@ -1,12 +1,12 @@
 FMSec (File Manager SECurity) - a set of security extensions to file managers.
 
 To install:
-- change into the directory of your chosen desktop environments
+- change into the directory of your chosen desktop environment
   (e.g. 'cd KDE5'),
 - run './install.sh'
 
 To uninstall, if needed:
-- change into the directory of your chosen desktop environments
+- change into the directory of your chosen desktop environment
   (e.g. 'cd KDE5'),
 - run './uninstall.sh'
 

@@ -1,8 +1,6 @@
-#!/bin/sh
+# "Encrypt using OpenSSL" Thunar context menu entry
 #
-# FMSec KDE5 installer
-#
-# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,9 +24,16 @@
 # 		USA
 #
 
-. ../common/functions.bash
-
-fmsec_install "$HOME/.local/share/kservices5"
-
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+[Desktop Entry]
+Name=Encrypt using OpenSSL
+Type=Application
+#Version=1.0
+#Encoding=UTF-8
+#ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+#MimeType=*;
+Icon=kdenlive-lock
+# Bug (in Thunar): only the first '%f' gets substituted, the second is replaced by an empty string
+#Exec=/bin/bash -l -i -c "openssl enc -aes128 -a -salt -in %f -out %f.enc"
+#Exec=/bin/bash -l -c "$HOME/bin/Openssl-encrypt.sh %f; exit 0"
+Exec=xterm -e "$HOME/bin/Openssl-encrypt.sh %f"

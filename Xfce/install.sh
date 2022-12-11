@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# FMSec KDE5 installer
+# FMSec Xfce installer
 #
-# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -28,7 +28,8 @@
 
 . ../common/functions.bash
 
-fmsec_install "$HOME/.local/share/kservices5"
+fmsec_install "$HOME/.local/share/Thunar/sendto"
+[[ ! -e "$HOME/bin/Openssl-encrypt.sh" ]] && /bin/ln -s "$HOME/.local/share/Thunar/sendto/Openssl-encrypt.sh" "$HOME/bin/Openssl-encrypt.sh"
 
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
+echo "Install OK. Restart Thunar."
 exit 0

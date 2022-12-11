@@ -26,22 +26,9 @@
 # 		USA
 #
 
-. common.sh
+. ../common/functions.bash
 
-for i in $FILES; do
-	rm -f "$DESTPATH/$i"
-done;
-
-unset DESTPATH
-unset i
-unset FILES
-
-for i in $SHFILES; do
-
-	[[ -L "$HOME/bin/$i" ]] && rm -f "$HOME/bin/$i"
-done;
-
-unset SHFILES
+fmsec_uninstall "$HOME/.local/share/kservices5"
 
 echo "Uninstall OK. Restart Konqueror/Dolphin/Krusader."
 exit 0

@@ -26,16 +26,7 @@
 # 		USA
 #
 
-if ( test -z "$HOME" ); then
-
-	if ( test -d "/home/`whoami`" ); then
-
-		HOME=/home/`whoami`
-	else
-		echo "Set 'HOME' to your home directory and re-run this script."
-		exit 1
-	fi
-fi
+. ../common/functions.bash
 
 if ( test -z "$KDEHOME" ); then
 
@@ -48,33 +39,7 @@ if ( test -z "$KDEHOME" ); then
 	fi
 fi
 
-DESTPATH="$KDEHOME/share/kde4/services"
-
-unalias rm >/dev/null 2>&1
-
-FILES="safeRemoveDir.desktop		\
-	truecrypt-mount.desktop		\
-	truecrypt-umount.desktop	\
-	wipefreespace.desktop		\
-	safeRemove.desktop		\
-	Shred-rec.sh			\
-	TrueCrypt-mount.sh		\
-	openssl-decrypt.desktop		\
-	Openssl-decrypt.sh		\
-	openssl-encrypt.desktop		\
-	"
-
-for i in $FILES; do
-	rm -f "$DESTPATH/$i"
-done;
-
-[[ -L "$HOME/bin/Shred-rec.sh"       ]] && rm -f "$HOME/bin/Shred-rec.sh"
-[[ -L "$HOME/bin/TrueCrypt-mount.sh" ]] && rm -f "$HOME/bin/TrueCrypt-mount.sh"
-[[ -L "$HOME/bin/Openssl-decrypt.sh" ]] && rm -f "$HOME/bin/Openssl-decrypt.sh"
-
-unset DESTPATH
-unset i
-unset FILES
+fmsec_uninstall "$KDEHOME/share/kde4/services"
 
 echo "Uninstall OK. Restart Konqueror/Dolphin."
 exit 0

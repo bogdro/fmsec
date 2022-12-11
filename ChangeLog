@@ -1,3 +1,19 @@
+2021-11-25	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec version 4.0
+	  Added suport for Thunar from Xfce 4.x (without TrueCrypt).
+	* common: moved all the common shell scripts to the "common" directory
+	* common/function.bash: a script with functions common to installers
+	  and uninstallers. Removed the 'unalias' commands in favour to using
+	  absolute paths.
+	* KDE[345]/*.sh: Moved all the common install/uninstall code to
+	  common/function.bash and just call the functions with the right
+	  arguments now.
+	* Makefile: started distributing the Makefile, currently used only to
+	  build the release packages
+	* Xfce: added a directory for Xfce's Thunar.
+	* install-all.sh, uninstall-all.sh: added un/installing Xfce
+
 2021-11-21	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec version 3.2

@@ -26,7 +26,7 @@
 # 		USA
 #
 
-for d in KDE3 KDE4 KDE5; do
+for d in KDE3 KDE4 KDE5 Xfce; do
 
 	echo "Installing $d"
 	cd $d

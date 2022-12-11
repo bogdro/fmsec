@@ -38,6 +38,7 @@ Icon=kdenlive-unlock
 [Desktop Action SSLdec]
 Name=Decrypt using OpenSSL
 Icon=kdenlive-unlock
+#Exec=/usr/bin/konsole -e "$HOME/bin/Openssl-decrypt.sh %f; exit"
 Exec=xterm -e "$HOME/bin/Openssl-decrypt.sh %f; exit"
 #dbus-send --session --type=method_call --dest=org.kde.kdesktop /KDesktopIface org.kde.KDesktopIface.popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"
 #dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"

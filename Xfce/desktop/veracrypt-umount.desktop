@@ -1,8 +1,6 @@
-#!/bin/sh
+# "Umount using VeraCrypt" Thunar context menu entry
 #
-# FMSec KDE5 installer
-#
-# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,9 +24,14 @@
 # 		USA
 #
 
-. ../common/functions.bash
-
-fmsec_install "$HOME/.local/share/kservices5"
-
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+[Desktop Entry]
+Name=Umount using VeraCrypt
+Type=Application
+#Version=1.0
+#Encoding=UTF-8
+#ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+MimeType=inode/directory;
+Icon=drive-removable-media
+#Exec=/bin/bash -l -c "veracrypt -d %f"
+Exec=xterm -e "veracrypt -d %f"

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# FMSec KDE5 installer
+# "Mount using TrueCrypt" context menu entry - program.
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -26,9 +26,34 @@
 # 		USA
 #
 
-. ../common/functions.bash
+if ( test "x$1" = "x" ); then
 
-fmsec_install "$HOME/.local/share/kservices5"
+	echo -n "Enter TrueCrypt volume path: "
+	read v
 
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+	if ( test "x$v" = "x" || ! test -e "$v" ); then
+
+		exit 1
+	fi
+else
+	v=$1
+fi;
+
+if ( test "x$2" = "x" ); then
+
+	echo -n "Enter destination directory: "
+	read d
+
+	if ( test "x$d" = "x" || ! test -e "$d" ); then
+
+		exit 2
+	fi
+else
+	d=$2
+fi;
+
+[[ ! -d $d ]] && (mkdir -p $d || exit 3)
+#[[ -d $d ]] && truecrypt -u $v $d	# -u was the "user mount" option in TrueCrypt 4.3
+[[ -d $d ]] && truecrypt $v $d
+
+exit $?

@@ -1,8 +1,6 @@
-#!/bin/sh
+# FMSec Makefile
 #
-# FMSec KDE5 installer
-#
-# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,9 +24,35 @@
 # 		USA
 #
 
-. ../common/functions.bash
+NAME = fmsec
+VER = 4.0
 
-fmsec_install "$HOME/.local/share/kservices5"
+RMDIR = /bin/rm -fr
+MKDIR = /bin/mkdir
+COPY = /bin/cp -r
 
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+PACK1 = /bin/tar --format gnutar -vcf
+PACK1_EXT = .tar
+
+PACK2 = /usr/bin/gzip -9
+PACK2_EXT = .gz
+
+SUBDIRS = common KDE3 KDE4 KDE5 Xfce
+
+all:	dist
+
+dist:	$(NAME)-$(VER)$(PACK1_EXT)$(PACK2_EXT)
+
+$(NAME)-$(VER)$(PACK1_EXT)$(PACK2_EXT): AUTHORS ChangeLog COPYING NEWS README \
+		INSTALL-FMSec.txt install-all.sh uninstall-all.sh Makefile \
+		$(shell find $(SUBDIRS) -type f)
+	$(RMDIR) $(NAME)-$(VER)
+	$(MKDIR) $(NAME)-$(VER)
+	$(COPY) AUTHORS ChangeLog COPYING INSTALL-FMSec.txt NEWS README \
+		install-all.sh uninstall-all.sh Makefile $(SUBDIRS) \
+		$(NAME)-$(VER)
+	$(PACK1) $(NAME)-$(VER)$(PACK1_EXT) $(NAME)-$(VER)
+	$(PACK2) $(NAME)-$(VER)$(PACK1_EXT)
+	$(RMDIR) $(NAME)-$(VER)
+
+.PHONY: all dist

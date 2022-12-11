@@ -1,8 +1,6 @@
-#!/bin/sh
+# "Decrypt using OpenSSL" Thunar context menu entry
 #
-# FMSec KDE5 installer
-#
-# Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -26,9 +24,14 @@
 # 		USA
 #
 
-. ../common/functions.bash
-
-fmsec_install "$HOME/.local/share/kservices5"
-
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+[Desktop Entry]
+Name=Decrypt using OpenSSL
+Type=Application
+#Version=1.0
+#Encoding=UTF-8
+#ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+#MimeType=*;
+Icon=kdenlive-unlock
+#Exec=/bin/bash -l -c "$HOME/bin/Openssl-decrypt.sh %f; exit 0"
+Exec=xterm -e "$HOME/bin/Openssl-decrypt.sh %f; exit 0"

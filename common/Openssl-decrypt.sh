@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# FMSec KDE5 installer
+# "Decrypt using OpenSSL" context menu entry - program.
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -26,9 +26,17 @@
 # 		USA
 #
 
-. ../common/functions.bash
+if ( test "x$1" = "x" ); then
 
-fmsec_install "$HOME/.local/share/kservices5"
+	exit 1;
+fi;
 
-echo "Install OK. Restart Konqueror/Dolphin/Krusader."
-exit 0
+name=`echo $1 | sed 's/\.enc$//'`
+
+if ( test -f $name ); then
+
+	name="$name.dec"
+fi
+
+openssl enc -aes128 -a -in $1 -d -out $name
+exit $?

@@ -26,16 +26,7 @@
 # 		USA
 #
 
-if ( test -z "$HOME" ); then
-
-	if ( test -d "/home/`whoami`" ); then
-
-		HOME=/home/`whoami`
-	else
-		echo "Set 'HOME' to your home directory and re-run this script."
-		exit 1
-	fi
-fi
+. ../common/functions.bash
 
 if ( test -z "$KDEHOME" ); then
 
@@ -48,48 +39,7 @@ if ( test -z "$KDEHOME" ); then
 	fi
 fi
 
-DESTPATH="$KDEHOME/share/kde4/services"
-
-unalias mkdir >/dev/null 2>&1
-unalias cp    >/dev/null 2>&1
-
-mkdir -p "$DESTPATH" 2>/dev/null
-cp -f desktop/* "$DESTPATH"
-
-if ( test -e "$HOME/bin" && ! test -d "$HOME/bin" ); then
-
-	unset DESTPATH
-
-	echo "$HOME/bin exists, but not a directory. Fix this. Install partially failed."
-	exit 3
-fi
-
-[[ ! -e "$HOME/bin" ]] && mkdir "$HOME/bin"
-
-if ( ! test -d "$HOME/bin" ); then
-
-	unset DESTPATH
-
-	echo "$HOME/bin can't be created. Install partially failed."
-	exit 4
-fi
-
-[[ ! -e "$HOME/bin/Shred-rec.sh"       ]] && ln -s "$DESTPATH/Shred-rec.sh"       "$HOME/bin/Shred-rec.sh"
-[[ ! -e "$HOME/bin/TrueCrypt-mount.sh" ]] && ln -s "$DESTPATH/TrueCrypt-mount.sh" "$HOME/bin/TrueCrypt-mount.sh"
-[[ ! -e "$HOME/bin/Openssl-decrypt.sh" ]] && ln -s "$DESTPATH/Openssl-decrypt.sh" "$HOME/bin/Openssl-decrypt.sh"
-
-if (       ! test -e "$HOME/bin/Shred-rec.sh"		\
-	|| ! test -e "$HOME/bin/TrueCrypt-mount.sh"	\
-	|| ! test -e "$HOME/bin/Openssl-decrypt.sh"	\
-   ); then
-
-	unset DESTPATH
-
-	echo "Install partially failed."
-	exit 5
-fi
-
-unset DESTPATH
+fmsec_install "$KDEHOME/share/kde4/services"
 
 echo "Install OK. Restart Konqueror/Dolphin."
 exit 0
