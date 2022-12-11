@@ -53,7 +53,7 @@ else
 fi;
 
 [[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
+#[[ -d $d ]] && truecrypt -u $v $d	# -u was the "user mount" option in TrueCrypt 4.3
 [[ -d $d ]] && truecrypt $v $d
 
 exit $?

@@ -33,4 +33,5 @@ Name=Safe remove directory (recurse)
 Icon=remove
 Exec=dcop kdesktop KDesktopIface popupExecuteCommand "/bin/sh -c \" $HOME/bin/Shred-rec.sh %f\""
 #"/bin/sh -c find %F -type f -exec shred -u '{}' \; && rm -fr %F"
+
 # find ... \; && for i in `seq 1 10`; do echo $i; done

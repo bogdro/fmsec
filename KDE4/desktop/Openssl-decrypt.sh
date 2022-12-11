@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# "Decrypt using OpenSSL" Konqueror context menu entry - program.
+# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry - program.
 #
 # Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #

@@ -1,7 +1,16 @@
+2020-04-01	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.1
+	  Fixes in the Shred-rec.sh script.
+	* KDE[345]/desktop/Shred-rec.sh: no longer needing to set IFS, using
+	  a simple loop now. Skipping also the ".." element. Fix sorting.
+	  Removed unused variables.
+
 2019-05-01	Bogdan Drozdowski <bogdandr@op.pl>
 
 	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.0
-	  KDE5 support.
+	  KDE5 support. VeraCrypt support added. Fixes in the now-deprecated
+	  TrueCrypt-mount.sh script.
 	* KDE[34]/desktop/*, KDE[34]/*.sh, install-all.sh, uninstall-all.sh:
 	  Added a note about FMSec and its homepage. Removed unnecessary
 	  trailing newlines.

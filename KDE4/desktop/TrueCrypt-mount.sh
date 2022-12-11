@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror context menu entry program
+# "Mount using TrueCrypt" Konqueror/Dolphin context menu entry program
 #
 # Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -53,7 +53,7 @@ else
 fi;
 
 [[ ! -d $d ]] && (mkdir -p $d || exit 3)
-#[[ -d $d ]] && truecrypt -u $v $d     # -u was the "user mount" option in TrueCrypt 4.3
+#[[ -d $d ]] && truecrypt -u $v $d	# -u was the "user mount" option in TrueCrypt 4.3
 [[ -d $d ]] && truecrypt $v $d
 
 exit $?

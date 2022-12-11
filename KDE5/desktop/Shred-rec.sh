@@ -34,8 +34,7 @@ fi;
 
 RANDOM=`date +%k%d%M%j%S`
 
-IFS=~
-echo "$*" | sed 's/~/\n/g' | while read; do directory=$REPLY
+for directory in $*; do
 
 	if ( test "x$directory" != "x" ); then
 
@@ -44,13 +43,13 @@ echo "$*" | sed 's/~/\n/g' | while read; do directory=$REPLY
 #dirs=`find "$directory" -type d | nl | sort -r | awk '{print $2}'`
 #dirs=`find "$directory" -type d | nl | sort -r | sed 's/^\s*//' | tr '\t' ' '	\
 #	| cut -d ' ' -f '2-' --output-delimiter=' '`
-		dirs=`find "$directory" -type d | nl | sort -r | sed 's/^\s*[0-9]*\s*//'`
+		#dirs=`find "$directory" -type d | nl | sort -r | sed 's/^\s*[0-9]*\s*//'`
 
-		find "$directory" -type d | nl | sort -r | sed 's/^\s*[0-9]*\s*//' | while read; do
+		find "$directory" -type d | nl | sort -r -n | sed 's/^\s*[0-9]*\s*//' | while read; do
 
 			i=$REPLY
 
-			if ( test "x$i" = "x." ); then
+			if ( [ "x$i" = "x." ] || [ "x$i" = "x.." ] ); then
 				continue;
 			fi
 
@@ -75,7 +74,7 @@ echo "$*" | sed 's/~/\n/g' | while read; do directory=$REPLY
 
 				mv "$i" "$newname"
 				#dirs=`echo "$dirs" | sed "s#\b$i\b#$newname#g"`
-				dirs=`echo "$dirs" | perl -wne "s~\b$i\b~$newname~g; print;"`
+				#dirs=`echo "$dirs" | perl -wne "s~\b$i\b~$newname~g; print;"`
 				i="$newname"
 				sync;
 			done;
