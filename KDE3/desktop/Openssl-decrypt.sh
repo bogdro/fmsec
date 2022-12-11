@@ -2,7 +2,7 @@
 #
 # "Decrypt using OpenSSL" Konqueror context menu entry - program.
 #
-# Copyright (C) 2007 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -36,4 +36,3 @@ if ( test -f $name ); then
 fi
 
 openssl enc -bf -a -in $1 -d -out $name
-

@@ -1,6 +1,6 @@
-# "Safe remove" Konqueror context menu entry
+# "Encrypt using OpenSSL" Konqueror context menu entry
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -21,10 +21,14 @@
 #
 
 [Desktop Entry]
-ServiceTypes=all/allfiles
-Actions=safeRemove
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+MimeType=application/octet-stream;
+Actions=SSLenc
+Icon=encrypted
 
-[Desktop Action safeRemove]
-Name=Safe remove
-Icon=remove
-Exec=dcop kdesktop KDesktopIface popupExecuteCommand "shred -u %F"
+[Desktop Action SSLenc]
+Name=Encrypt using OpenSSL
+Icon=encrypted
+Exec=xterm -e "openssl enc -bf -a -salt -in %f -out %f.enc; exit"

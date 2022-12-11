@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# FMSec KDE3 uninstaller
+# FMSec KDE4 uninstaller
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -44,7 +44,7 @@ if ( test -z "$KDEHOME" ); then
 	fi
 fi
 
-DESTPATH="$KDEHOME/share/apps/konqueror/servicemenus"
+DESTPATH="$KDEHOME/share/kde4/services"
 
 unalias rm >/dev/null 2>&1
 
@@ -72,4 +72,4 @@ unset DESTPATH
 unset i
 unset FILES
 
-echo "Uninstall OK. Restart Konqueror."
+echo "Uninstall OK. Restart Konqueror/Dolphin."

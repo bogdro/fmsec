@@ -1,5 +1,23 @@
 2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
+	* FMSec (then - KonqSec + Konq4Sec) version 2.0.
+	  Added support for KDE4 (Konqueror and Dolphin). Fixed the license
+	  texts. Other small fixes.
+	* KDE4/*.desktop: added the files to support KDE4: new Type,
+	  ServiceTypes, MimeType and Icon parameters, changed Exec lines to
+	  plain commands from dbus. Updated for compatibility with KDE4 -
+	  added "Name" parameters, fixed "Action" parameters.
+	* KDE4/install.sh: copied from KDE3/install.sh. Changed the
+	  destination path to match KDE4's default. Started using the name
+	  "Dolphin" for the file manager.
+	* KDE4/uninstall.sh: copied from KDE3/uninstall.sh. Changed the
+	  destination path to match KDE4's default. Started using the name
+	  "Dolphin" for the file manager.
+	* (2021-11-19) install-all.sh, uninstall-all.sh: added scripts that
+	  install and uninstall FMSec for all supported environments.
+
+2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
 	* FMSec (then - KonqSec) version 1.0
 	  Renamed "wipe.desktop" to "safeRemove.desktop". Fixes in shell
 	  script names. Fixes in the installer and uninstaller.

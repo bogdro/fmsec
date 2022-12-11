@@ -1,4 +1,6 @@
-# "Safe remove" Konqueror context menu entry
+#!/bin/sh
+#
+# "Decrypt using OpenSSL" Konqueror context menu entry - program.
 #
 # Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -20,11 +22,17 @@
 # 		USA
 #
 
-[Desktop Entry]
-ServiceTypes=all/allfiles
-Actions=safeRemove
+if ( test "x$1" = "x" ); then
 
-[Desktop Action safeRemove]
-Name=Safe remove
-Icon=remove
-Exec=dcop kdesktop KDesktopIface popupExecuteCommand "shred -u %F"
+	exit 1;
+fi;
+
+name=`echo $1 | sed 's/\.enc$//'`
+
+if ( test -f $name ); then
+
+	name="$name.dec"
+fi
+
+openssl enc -bf -a -in $1 -d -out $name
+

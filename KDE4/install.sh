@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# FMSec KDE3 installer
+# FMSec KDE4 installer
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -44,7 +44,7 @@ if ( test -z "$KDEHOME" ); then
 	fi
 fi
 
-DESTPATH="$KDEHOME/share/apps/konqueror/servicemenus"
+DESTPATH="$KDEHOME/share/kde4/services"
 
 unalias mkdir >/dev/null 2>&1
 unalias cp    >/dev/null 2>&1
@@ -87,4 +87,4 @@ fi
 
 unset DESTPATH
 
-echo "Install OK. Restart Konqueror."
+echo "Install OK. Restart Konqueror/Dolphin."

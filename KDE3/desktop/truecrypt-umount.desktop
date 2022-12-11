@@ -1,6 +1,6 @@
 # "Umount using TrueCrypt" Konqueror context menu entry
 #
-# Copyright (C) 2007 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -28,4 +28,3 @@ Actions=umountTC
 Name=Umount using TrueCrypt
 Icon=decrypted
 Exec=truecrypt -d %f
-

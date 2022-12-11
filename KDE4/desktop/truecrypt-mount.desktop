@@ -1,6 +1,6 @@
-# "Safe remove" Konqueror context menu entry
+# "Mount using TrueCrypt" Konqueror context menu entry
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -21,10 +21,14 @@
 #
 
 [Desktop Entry]
-ServiceTypes=all/allfiles
-Actions=safeRemove
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+MimeType=application/octet-stream;
+Actions=mountTC
+Icon=encrypted
 
-[Desktop Action safeRemove]
-Name=Safe remove
-Icon=remove
-Exec=dcop kdesktop KDesktopIface popupExecuteCommand "shred -u %F"
+[Desktop Action mountTC]
+Name=Mount using TrueCrypt
+Icon=encrypted
+Exec=xterm -e "$HOME/bin/Truecrypt-mount.sh %f; exit"

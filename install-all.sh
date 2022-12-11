@@ -1,6 +1,8 @@
-# "Safe remove" Konqueror context menu entry
+#!/bin/bash
 #
-# Copyright (C) 2007-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# FMSec installer
+#
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -20,11 +22,10 @@
 # 		USA
 #
 
-[Desktop Entry]
-ServiceTypes=all/allfiles
-Actions=safeRemove
+for d in KDE3 KDE4; do
 
-[Desktop Action safeRemove]
-Name=Safe remove
-Icon=remove
-Exec=dcop kdesktop KDesktopIface popupExecuteCommand "shred -u %F"
+	echo "Installing $d"
+	cd $d
+	bash install.sh
+	cd ..
+done;
