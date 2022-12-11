@@ -1,3 +1,9 @@
+2012-03-31	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec) version 2.4.
+	  Fixed the KDE4 desktop files.
+	* *.desktop: correctly quote the commands where needed, remove "bash"
+
 2012-03-19	Bogdan Drozdowski <bogdandr@op.pl>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.3.

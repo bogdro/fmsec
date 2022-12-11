@@ -31,7 +31,7 @@ Icon=remove
 [Desktop Action safeRemoveDir]
 Name=Safe remove directory (recurse)
 Icon=remove
-Exec=/usr/bin/konsole -e bash -c "$HOME/bin/Shred-rec.sh %f; exit"
+Exec=/usr/bin/konsole -e "$HOME/bin/Shred-rec.sh %f; exit"
 
 #"/bin/sh -c find %F -type f -exec shred -u '{}' \; && rm -fr %F"
 # find ... \; && for i in `seq 1 10`; do echo $i; done
