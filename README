@@ -1,0 +1,21 @@
+This is the README file for FMSec.
+
+FMSec (File Manager SECurity) is a set of extensions to file managers that
+enable some security-related operations to be easily performed.
+
+The operations are:
+
+- encryption and decryption using OpenSSL,
+- safe removing (shredding) files and directories,
+- mounting and unmounting TrueCrypt and VeraCrypt
+  (https://www.veracrypt.fr/en/) volumes,
+- wiping the free space on a filesystem using WipeFreeSpace
+  (https://wipefreespace.sourceforge.io/).
+
+----------------------------------------------------------------
+
+FMSec supports the following file managers in the following
+desktop environments:
+
+1. KDE 3.x:
+  - Konqueror

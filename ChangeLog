@@ -1,0 +1,5 @@
+2009-08-26	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec (then - KonqSec) initial version: shredding files and
+	  directories, decrypt and encrypt using OpenSSL, TrueCrypt volumes
+	  mount and un-mount, wipe free space. Installing scripts.
