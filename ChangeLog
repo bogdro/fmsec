@@ -1,3 +1,15 @@
+2013-10-28	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec) version 2.5.
+	  Further updates in the KDE4 desktop files. Updated the installers.
+	* KDE[34]/install.sh: silence some warnings. Changed failure messages
+	  to "partial failures" in some places.
+	* KDE4/openssl-decrypt.desktop: change KDE's "konsole" to xterm
+	* KDE4/{openssl-encrypt.desktop, safeRemove.desktop,
+	  safeRemoveDir.desktop, truecrypt-mount.desktop,
+	  truecrypt-umount.desktop, wipefreespace.desktop}: un-quote the
+	  commands and remove "exit"
+
 2012-03-31	Bogdan Drozdowski <bogdandr@op.pl>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.4.

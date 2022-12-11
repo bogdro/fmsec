@@ -49,14 +49,14 @@ DESTPATH="$KDEHOME/share/kde4/services"
 unalias mkdir >/dev/null 2>&1
 unalias cp    >/dev/null 2>&1
 
-mkdir -p "$DESTPATH"
+mkdir -p "$DESTPATH" 2>/dev/null
 cp -f desktop/* "$DESTPATH"
 
 if ( test -e "$HOME/bin" && ! test -d "$HOME/bin" ); then
 
 	unset DESTPATH
 
-	echo "$HOME/bin exists, but not a directory. Fix this. Install failed."
+	echo "$HOME/bin exists, but not a directory. Fix this. Install partially failed."
 	exit 3
 fi
 
@@ -66,7 +66,7 @@ if ( ! test -d "$HOME/bin" ); then
 
 	unset DESTPATH
 
-	echo "$HOME/bin can't be created. Install failed."
+	echo "$HOME/bin can't be created. Install partially failed."
 	exit 4
 fi
 
@@ -81,7 +81,7 @@ if (       ! test -e "$HOME/bin/Shred-rec.sh"		\
 
 	unset DESTPATH
 
-	echo "Install failed."
+	echo "Install partially failed."
 	exit 5
 fi
 
