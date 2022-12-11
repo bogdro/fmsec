@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry - program.
+# "Decrypt using OpenSSL" Konqueror/Dolphin/Krusader context menu entry - program.
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -38,5 +38,5 @@ if ( test -f $name ); then
 	name="$name.dec"
 fi
 
-openssl enc -bf -a -in $1 -d -out $name
+openssl enc -aes128 -a -in $1 -d -out $name
 exit $?

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# "Mount using TrueCrypt" Konqueror/Dolphin context menu entry - program.
+# "Mount using TrueCrypt" Konqueror/Dolphin/Krusader context menu entry - program.
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #

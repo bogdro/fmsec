@@ -1,4 +1,15 @@
-2020-04-01	Bogdan Drozdowski <bogdandr@op.pl>
+2021-11-21	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec version 3.2
+	  Compatibility fixes with KDE5. Compatibility fixes with OpenSSL v3.
+	  Other small fixes.
+	* KDE5/desktop/*: added "/Krusader" to top comments.
+	* KDE5/desktop/*.desktop: removed unnecessary "Name" clauses
+	* KDE[345]/desktop/{Openssl-decrypt.sh,openssl-encrypt.desktop}:
+	  changed the cipher to AES-128. Not all OpenSSL versions now support
+	  the cipher I've previously chosen (Blowfish).
+
+2020-04-01	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.1
 	  Fixes in the Shred-rec.sh script.
@@ -6,7 +17,7 @@
 	  a simple loop now. Skipping also the ".." element. Fix sorting.
 	  Removed unused variables.
 
-2019-05-01	Bogdan Drozdowski <bogdandr@op.pl>
+2019-05-01	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.0
 	  KDE5 support. VeraCrypt support added. Fixes in the now-deprecated
@@ -38,7 +49,7 @@
 	* (2021-11-20) install-all.sh, uninstall-all.sh: added KDE5 support.
 	* (2021-11-20) INSTALL-FMSec.txt: updated with KDE5.
 
-2013-10-28	Bogdan Drozdowski <bogdandr@op.pl>
+2013-10-28	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.5.
 	  Further updates in the KDE4 desktop files. Updated the installers.
@@ -50,19 +61,19 @@
 	  truecrypt-umount.desktop, wipefreespace.desktop}: un-quote the
 	  commands and remove "exit"
 
-2012-03-31	Bogdan Drozdowski <bogdandr@op.pl>
+2012-03-31	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.4.
 	  Fixed the KDE4 desktop files.
 	* *.desktop: correctly quote the commands where needed, remove "bash"
 
-2012-03-19	Bogdan Drozdowski <bogdandr@op.pl>
+2012-03-19	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.3.
 	  Updated the KDE4 desktop files.
 	* *.desktop: Wrap "bash" calls inside KDE's "konsole" windows.
 
-2012-03-18	Bogdan Drozdowski <bogdandr@op.pl>
+2012-03-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.2.
 	  Simplify the KDE4 desktop files.

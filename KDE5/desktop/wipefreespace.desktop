@@ -1,4 +1,4 @@
-# "Wipe free space" Konqueror/Dolphin context menu entry
+# "Wipe free space" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -25,8 +25,6 @@
 #
 
 [Desktop Entry]
-Name=Wipe free space
-Name[pl]=Wyczyść puste miejsce
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -37,6 +35,5 @@ Icon=edit-clear-all
 
 [Desktop Action wipefreespace]
 Name=Wipe free space
-Name[pl]=Wyczyść puste miejsce
 Icon=edit-clear-all
 Exec=/usr/bin/konsole -e wipefreespace %F

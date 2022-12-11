@@ -39,5 +39,5 @@ if ( test -f $name ); then
 	name="$name.dec"
 fi
 
-openssl enc -bf -a -in $1 -d -out $name
+openssl enc -aes128 -a -in $1 -d -out $name
 exit $?

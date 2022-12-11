@@ -1,4 +1,4 @@
-# "Safe remove" Konqueror/Dolphin context menu entry
+# "Safe remove" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -28,8 +28,6 @@
 #
 
 [Desktop Entry]
-Name=Safe remove
-Name[pl]=Bezpiecznie usuń
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -39,6 +37,5 @@ Icon=waiting
 
 [Desktop Action safeRemove]
 Name=Safe remove
-Name[pl]=Bezpiecznie usuń
 Icon=waiting
 Exec=/usr/bin/konsole -e shred -u %F

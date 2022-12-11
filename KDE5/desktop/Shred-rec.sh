@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# "Safe remove directory (recurse)" Konqueror/Dolphin context menu entry - program.
+# "Safe remove directory (recurse)" Konqueror/Dolphin/Krusader context menu entry - program.
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #

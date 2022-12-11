@@ -1,4 +1,4 @@
-# "Decrypt using OpenSSL" Konqueror/Dolphin context menu entry
+# "Decrypt using OpenSSL" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -28,8 +28,6 @@
 #
 
 [Desktop Entry]
-Name=Decrypt using OpenSSL
-Name[pl]=Odszyfruj używając OpenSSL
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -39,7 +37,6 @@ Icon=kdenlive-unlock
 
 [Desktop Action SSLdec]
 Name=Decrypt using OpenSSL
-Name[pl]=Odszyfruj używając OpenSSL
 Icon=kdenlive-unlock
 Exec=xterm -e "$HOME/bin/Openssl-decrypt.sh %f; exit"
 #dbus-send --session --type=method_call --dest=org.kde.kdesktop /KDesktopIface org.kde.KDesktopIface.popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"

@@ -1,4 +1,4 @@
-# "Umount using VeraCrypt" Konqueror/Dolphin context menu entry
+# "Umount using VeraCrypt" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -25,8 +25,6 @@
 #
 
 [Desktop Entry]
-Name=Umount using VeraCrypt
-Name[pl]=Odmontuj używając VeraCrypt
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -36,6 +34,5 @@ Icon=drive-removable-media
 
 [Desktop Action umountVC]
 Name=Umount using VeraCrypt
-Name[pl]=Odmontuj używając VeraCrypt
 Icon=drive-removable-media
 Exec=/usr/bin/konsole -e veracrypt -d %f

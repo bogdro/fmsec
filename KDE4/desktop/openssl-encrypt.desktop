@@ -35,4 +35,4 @@ Icon=encrypted
 [Desktop Action SSLenc]
 Name=Encrypt using OpenSSL
 Icon=encrypted
-Exec=/usr/bin/konsole -e openssl enc -bf -a -salt -in %f -out %f.enc
+Exec=/usr/bin/konsole -e openssl enc -aes128 -a -salt -in %f -out %f.enc

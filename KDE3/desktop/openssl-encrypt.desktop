@@ -31,4 +31,4 @@ Actions=SSLenc
 [Desktop Action SSLenc]
 Name=Encrypt using OpenSSL
 Icon=encrypted
-Exec=dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e \"openssl enc -bf -a -salt -in %f -out %f.enc\""
+Exec=dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e \"openssl enc -aes128 -a -salt -in %f -out %f.enc\""

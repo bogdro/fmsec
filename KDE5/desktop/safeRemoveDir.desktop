@@ -1,4 +1,4 @@
-# "Safe remove directory (recurse)" Konqueror/Dolphin context menu entry
+# "Safe remove directory (recurse)" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -28,8 +28,6 @@
 #
 
 [Desktop Entry]
-Name=Safe remove directory (recurse)
-Name[pl]=Bezpiecznie usuń katalog (rekursywnie)
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -39,7 +37,6 @@ Icon=waiting
 
 [Desktop Action safeRemoveDir]
 Name=Safe remove directory (recurse)
-Name[pl]=Bezpiecznie usuń katalog (rekursywnie)
 Icon=waiting
 Exec=/usr/bin/konsole -e $HOME/bin/Shred-rec.sh %f
 

@@ -1,4 +1,4 @@
-# "Encrypt using OpenSSL" Konqueror/Dolphin context menu entry
+# "Encrypt using OpenSSL" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -28,8 +28,6 @@
 #
 
 [Desktop Entry]
-Name=Encrypt using OpenSSL
-Name[pl]=Zaszyfruj używając OpenSSL
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -39,6 +37,5 @@ Icon=kdenlive-lock
 
 [Desktop Action SSLenc]
 Name=Encrypt using OpenSSL
-Name[pl]=Zaszyfruj używając OpenSSL
 Icon=kdenlive-lock
-Exec=/usr/bin/konsole -e openssl enc -bf -a -salt -in %f -out %f.enc
+Exec=/usr/bin/konsole -e openssl enc -aes128 -a -salt -in %f -out %f.enc

@@ -1,4 +1,4 @@
-# "Mount using VeraCrypt" Konqueror/Dolphin context menu entry
+# "Mount using VeraCrypt" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -25,8 +25,6 @@
 #
 
 [Desktop Entry]
-Name=Mount using VeraCrypt
-Name[pl]=Zamontuj używając VeraCrypt
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -36,6 +34,5 @@ Icon=drive-removable-media
 
 [Desktop Action mountVC]
 Name=Mount using VeraCrypt
-Name[pl]=Zamontuj używając VeraCrypt
 Icon=drive-removable-media
 Exec=/usr/bin/konsole -e $HOME/bin/VeraCrypt-mount.sh %f

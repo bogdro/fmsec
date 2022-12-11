@@ -1,4 +1,4 @@
-# "Mount using TrueCrypt" Konqueror/Dolphin context menu entry
+# "Mount using TrueCrypt" Konqueror/Dolphin/Krusader context menu entry
 #
 # Copyright (C) 2019-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
@@ -25,8 +25,6 @@
 #
 
 [Desktop Entry]
-Name=Mount using TrueCrypt
-Name[pl]=Zamontuj używając TrueCrypt
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
@@ -36,6 +34,5 @@ Icon=drive-removable-media
 
 [Desktop Action mountTC]
 Name=Mount using TrueCrypt
-Name[pl]=Zamontuj używając TrueCrypt
 Icon=drive-removable-media
 Exec=/usr/bin/konsole -e $HOME/bin/TrueCrypt-mount.sh %f
