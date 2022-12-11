@@ -1,6 +1,8 @@
-# "Mount using TrueCrypt" Konqueror context menu entry
+#!/bin/bash
 #
-# Copyright (C) 2010-2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# FMSec uninstaller
+#
+# Copyright (C) 2021 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -20,15 +22,10 @@
 # 		USA
 #
 
-[Desktop Entry]
-Type=Service
-ServiceTypes=KonqPopupMenu/Plugin
-#,application/octet-stream
-MimeType=application/octet-stream;
-Actions=mountTC;
-Icon=encrypted
+for d in KDE3 KDE4; do
 
-[Desktop Action mountTC]
-Name=Mount using TrueCrypt
-Icon=encrypted
-Exec=xterm -e "$HOME/bin/Truecrypt-mount.sh %f; exit"
+	echo "Uninstalling $d"
+	cd $d
+	bash uninstall.sh
+	cd ..
+done;

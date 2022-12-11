@@ -25,7 +25,7 @@ Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
 MimeType=inode/directory;
-Actions=safeRemoveDir
+Actions=safeRemoveDir;
 Icon=remove
 
 [Desktop Action safeRemoveDir]

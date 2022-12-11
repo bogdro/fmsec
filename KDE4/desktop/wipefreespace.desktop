@@ -23,9 +23,9 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
-#,application/octet-stream
-MimeType=inode/blockdevice;all/allfiles;
-Actions=wipefreespace
+MimeType=inode/blockdevice;application/octet-stream;
+#all/allfiles;
+Actions=wipefreespace;
 Icon=eraser
 
 [Desktop Action wipefreespace]

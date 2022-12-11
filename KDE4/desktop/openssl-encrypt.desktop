@@ -25,7 +25,7 @@ Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
 MimeType=application/octet-stream;
-Actions=SSLenc
+Actions=SSLenc;
 Icon=encrypted
 
 [Desktop Action SSLenc]

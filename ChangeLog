@@ -1,3 +1,13 @@
+2010-05-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec (then - KonqSec + Konq4Sec) version 2.1.
+	  Fixed compatibility of the KDE4 desktop files.
+	* KDE4/*.desktop: fixed the "Actions" entry.
+	* KDE4/wipefreespace.desktop: fixed the "Actions" entry. Updated the
+	  "MimeType" to include just binary files.
+	* (2021-11-19) INSTALL-FMSec.txt: updated with KDE4 and the "all"
+	  un/installation scripts.
+
 2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.0.

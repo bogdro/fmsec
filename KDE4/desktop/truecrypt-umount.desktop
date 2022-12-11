@@ -25,7 +25,7 @@ Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 #,application/octet-stream
 MimeType=inode/directory;
-Actions=umountTC
+Actions=umountTC;
 Icon=decrypted
 
 [Desktop Action umountTC]
