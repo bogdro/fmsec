@@ -31,6 +31,6 @@ Icon=encrypted
 [Desktop Action SSLdec]
 Name=Decrypt using OpenSSL
 Icon=encrypted
-Exec=bash -c "$HOME/bin/Openssl-decrypt.sh %f; exit"
+Exec=/usr/bin/konsole -e bash -c "$HOME/bin/Openssl-decrypt.sh %f; exit"
 #dbus-send --session --type=method_call --dest=org.kde.kdesktop /KDesktopIface org.kde.KDesktopIface.popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"
 #dcop kdesktop KDesktopIface popupExecuteCommand "xterm -e $HOME/bin/openssl-decrypt.sh %f"

@@ -1,3 +1,9 @@
+2012-03-19	Bogdan Drozdowski <bogdandr@op.pl>
+
+	* FMSec (then - KonqSec + Konq4Sec) version 2.3.
+	  Updated the KDE4 desktop files.
+	* *.desktop: Wrap "bash" calls inside KDE's "konsole" windows.
+
 2012-03-18	Bogdan Drozdowski <bogdandr@op.pl>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.2.
