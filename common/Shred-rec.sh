@@ -54,13 +54,13 @@ for directory in $*; do
 
 			len=`echo "$i" | wc -c`
 			newname=
-			for k in `seq 1 25`; do
+			for ((k=1; k<=25; k++)); do
 
 				newname=
-				for j in `seq 1 $len`; do
+				for ((j=1; j<=$len; j++)); do
 
 					#rnd=$(((`printf %d \'A\'` + $RANDOM)%26))
-					rnd=$(($RANDOM % 26))
+					rnd=$((RANDOM % 26))
 					newname="$rnd$newname"
 				done;
 
