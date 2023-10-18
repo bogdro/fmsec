@@ -27,7 +27,11 @@ RMDIR = /bin/rm -fr
 MKDIR = /bin/mkdir
 COPY = /bin/cp -r
 
-PACK1 = /bin/tar --format gnutar -vcf
+# Use the GNU tar format
+# ifneq ($(shell tar --version | grep -i bsd),)
+# PACK1_GNUOPTS = --format gnutar
+# endif
+PACK1 = /bin/tar $(PACK1_GNUOPTS) -vcf
 PACK1_EXT = .tar
 
 PACK2 = /usr/bin/gzip -9
