@@ -32,7 +32,7 @@ if ( test "x$1" = "x" ); then
 		exit 1
 	fi
 else
-	v=$1
+	v="$1"
 fi;
 
 if ( test "x$2" = "x" ); then
@@ -45,10 +45,10 @@ if ( test "x$2" = "x" ); then
 		exit 2
 	fi
 else
-	d=$2
+	d="$2"
 fi;
 
-[[ ! -d $d ]] && (mkdir -p $d || exit 3)
-[[ -d $d ]] && veracrypt $v $d
+[[ ! -d "$d" ]] && (mkdir -p "$d" || exit 3)
+[[ -d "$d" ]] && veracrypt "$v" "$d"
 
 exit $?

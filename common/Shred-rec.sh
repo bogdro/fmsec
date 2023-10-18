@@ -22,7 +22,6 @@
 #  along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-
 if ( test $# -lt 1 ); then
 
 	exit 1;
@@ -41,6 +40,7 @@ for directory in $*; do
 #	| cut -d ' ' -f '2-' --output-delimiter=' '`
 		#dirs=`find "$directory" -type d | nl | sort -r | sed 's/^\s*[0-9]*\s*//'`
 
+		# NOTE: the 'sort -r' is instead of the '-depth' option in find
 		find "$directory" -type d | nl | sort -r -n | sed 's/^\s*[0-9]*\s*//' | while read; do
 
 			i=$REPLY

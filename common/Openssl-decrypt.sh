@@ -27,12 +27,12 @@ if ( test "x$1" = "x" ); then
 	exit 1;
 fi;
 
-name=`echo $1 | sed 's/\.enc$//'`
+name=`echo "$1" | sed 's/\.enc$//'`
 
-if ( test -f $name ); then
+if ( test -f "$name" ); then
 
 	name="$name.dec"
 fi
 
-openssl enc -aes128 -a -in $1 -d -out $name
+openssl enc -aes128 -a -in "$1" -d -out "$name"
 exit $?
