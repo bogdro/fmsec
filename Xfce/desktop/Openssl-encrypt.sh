@@ -27,6 +27,6 @@ if ( test "x$1" = "x" ); then
 	exit 1;
 fi;
 
-name=$1
-openssl enc -aes128 -a -salt -in $name -out $name.enc
+name="$1"
+openssl enc -aes128 -a -salt -in "$name" -out "$name.enc"
 exit $?

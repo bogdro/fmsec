@@ -57,7 +57,7 @@ for directory in $*; do
 			for ((k=1; k<=25; k++)); do
 
 				newname=
-				for ((j=1; j<=$len; j++)); do
+				for ((j=1; j<=len; j++)); do
 
 					#rnd=$(((`printf %d \'A\'` + $RANDOM)%26))
 					rnd=$((RANDOM % 26))
