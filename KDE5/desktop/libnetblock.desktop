@@ -1,0 +1,38 @@
+# "Run under LibNetBlock" Konqueror/Dolphin/Krusader context menu entry
+#
+# Copyright (C) 2023 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
+#
+# This file is part of FMSec (File Manager SECurity), a set of extensions
+#  to file managers.
+# FMSec homepage: https://fmsec.sourceforge.io/
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program. If not, see <https://www.gnu.org/licenses/>.
+#
+
+[Desktop Entry]
+Type=Service
+#Version=1.0
+#Encoding=UTF-8
+ServiceTypes=KonqPopupMenu/Plugin
+#,application/octet-stream
+MimeType=all/allfiles;
+Actions=LNB;
+Icon=network-disconnect
+Name=Run under LibNetBlock
+
+[Desktop Action LNB]
+Name=Run under LibNetBlock
+Icon=network-disconnect
+#Exec=xterm -e '/bin/bash -l -c "LD_PRELOAD=libnetblock.so %F"'
+Exec=/bin/bash -l -c "LD_PRELOAD=libnetblock.so %F"
