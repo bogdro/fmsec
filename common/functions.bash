@@ -37,10 +37,13 @@ SHFILES="Shred-rec.sh			\
 	VeraCrypt-mount.sh		\
 	"
 
-FILES="safeRemoveDir.desktop		\
-	safeRemove.desktop		\
+FILES="libhideip.desktop		\
+	libnetblock.desktop		\
+	libsecrm.desktop		\
 	openssl-decrypt.desktop		\
 	openssl-encrypt.desktop		\
+	safeRemoveDir.desktop		\
+	safeRemove.desktop		\
 	truecrypt-mount.desktop		\
 	truecrypt-umount.desktop	\
 	veracrypt-mount.desktop		\
