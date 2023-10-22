@@ -28,19 +28,19 @@ License: GPLv2+
 FMSec supports the following file managers:
 
 1.  [KDE](https://kde.org/) 3.x:
-  - Konqueror
+-   Konqueror
 
 2.  [KDE](https://kde.org/) 4.x:
-  - Konqueror
-  - Dolphin
+-   Konqueror
+-   Dolphin
 
 3.  [KDE](https://kde.org/) 5.x:
-  - Konqueror
-  - Dolphin
-  - Krusader
+-   Konqueror
+-   Dolphin
+-   Krusader
 
 4.  [Xfce](https://xfce.org/) 4.x:
-  - Thunar
+-   Thunar
 
 ----------------------------------------------------------------
 
