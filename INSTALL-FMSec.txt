@@ -1,15 +1,55 @@
 FMSec (File Manager SECurity) - a set of security extensions to file managers.
 
+###### Local (per user) installation
+
 To install:
 - change into the directory of your chosen desktop environment
   (e.g. 'cd KDE5'),
 - run './install.sh'
+
+You can also run the chosen commands from the list:
+- make install-KDE3
+- make install-KDE4
+- make install-KDE5
+- make install-Xfce
+
+You can also install FMSec for all supported desktop environments at once
+by running './install-all.sh' or 'make install-all'.
+
+###### Local (per user) uninstallation
 
 To uninstall, if needed:
 - change into the directory of your chosen desktop environment
   (e.g. 'cd KDE5'),
 - run './uninstall.sh'
 
-You can also install or uninstall FMSec for all supported desktop
-environments at once by running './install-all.sh' or './uninstall-all.sh',
-respectively.
+You can also run the chosen commands from the list:
+- make uninstall-KDE3
+- make uninstall-KDE4
+- make uninstall-KDE5
+- make uninstall-Xfce
+
+You can also uninstall FMSec for all supported desktop environments at once
+by running './uninstall-all.sh' or 'make uninstall-all'.
+
+###### Global (system-wide) installation
+
+To install globally (KDE5 and Xfce only), run one of:
+- make install-global-KDE5 (for KDE5)
+- make install-global-Xfce (for Xfce)
+- make install-global (for all supported environments)
+
+###### Global (system-wide) uninstallation
+
+To uninstall globally, if needed, run one of:
+- make uninstall-global-KDE5 (for KDE5)
+- make uninstall-global-Xfce (for Xfce)
+- make uninstall-global (for all supported environments)
+
+###### Global installation and uninstallation parameters
+
+The default prefix for global installation and uninstallation is "/usr". To
+change it, run the respective 'make' command with the PREFIX parameter,
+giving the new value, e.g.
+
+make install-global PREFIX=/usr/local
