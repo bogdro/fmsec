@@ -41,6 +41,9 @@ PACK2_EXT = .gz
 
 SUBDIRS = common KDE3 KDE4 KDE5 Xfce
 
+DISTFILES = AUTHORS ChangeLog COPYING fmsec.spec INSTALL-FMSec.txt \
+	install-all.sh Makefile NEWS README uninstall-all.sh
+
 ifeq ($(PREFIX),)
 PREFIX = /usr
 endif
@@ -55,14 +58,11 @@ all:	dist
 
 dist:	$(NAME)-$(VER)$(PACK1_EXT)$(PACK2_EXT)
 
-$(NAME)-$(VER)$(PACK1_EXT)$(PACK2_EXT): AUTHORS ChangeLog COPYING NEWS README \
-		INSTALL-FMSec.txt install-all.sh uninstall-all.sh Makefile \
+$(NAME)-$(VER)$(PACK1_EXT)$(PACK2_EXT): $(DISTFILES) \
 		$(shell find $(SUBDIRS) -type f)
 	$(RMDIR) $(NAME)-$(VER)
 	$(MKDIR) $(NAME)-$(VER)
-	$(COPY) AUTHORS ChangeLog COPYING INSTALL-FMSec.txt NEWS README \
-		install-all.sh uninstall-all.sh Makefile $(SUBDIRS) \
-		$(NAME)-$(VER)
+	$(COPY) $(DISTFILES) $(SUBDIRS) $(NAME)-$(VER)
 	$(PACK1) $(NAME)-$(VER)$(PACK1_EXT) $(NAME)-$(VER)
 	$(PACK2) $(NAME)-$(VER)$(PACK1_EXT)
 	$(RMDIR) $(NAME)-$(VER)
