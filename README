@@ -10,7 +10,13 @@ The operations are:
 - mounting and unmounting TrueCrypt and VeraCrypt
   (https://www.veracrypt.fr/en/) volumes,
 - wiping the free space on a filesystem using WipeFreeSpace
-  (https://wipefreespace.sourceforge.io/).
+  (https://wipefreespace.sourceforge.io/),
+- running programs with LibSecRm (https://libsecrm.sourceforge.io/)
+  preloaded,
+- running programs with LibHideIP (https://libhideip.sourceforge.io/)
+  preloaded,
+- running programs with LibNetBlock (https://libnetblock.sourceforge.io/)
+  preloaded.
 
 FMSec homepage: https://fmsec.sourceforge.io/
 
