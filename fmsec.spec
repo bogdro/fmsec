@@ -26,6 +26,17 @@ Group:		Security
 Source:		%{fmsec_name}-%{fmsec_version}.tar.gz
 #BuildRoot:	{_tmppath}/{fmsec_name}-build
 BuildArch:	noarch
+Requires:	bash
+Requires:	coreutils
+Requires:	findutils
+Requires:	openssl
+Requires:	perl
+Requires:	sed
+Requires:	libhideip
+Requires:	libnetblock
+Requires:	libsecrm
+Requires:	wipefreespace
+BuildRequires:	make
 
 %description
 %{fmsec_descr}
@@ -58,7 +69,7 @@ BuildArch:	noarch
 %doc ChangeLog
 %doc INSTALL-FMSec.txt
 
-%dir %{fmsec_prefix}/libexec/%{fmsec_name}
+%attr(755,-,-) %dir %{fmsec_prefix}/libexec/%{fmsec_name}
 %attr(755,-,-) %{fmsec_prefix}/libexec/%{fmsec_name}/*.sh
 
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/libhideip.desktop
