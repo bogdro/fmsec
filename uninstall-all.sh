@@ -25,7 +25,5 @@
 for d in KDE3 KDE4 KDE5 Xfce; do
 
 	echo "Uninstalling $d"
-	cd $d
-	bash uninstall.sh
-	cd ..
+	(cd $d && bash uninstall.sh)
 done;

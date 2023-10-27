@@ -25,7 +25,5 @@
 for d in KDE3 KDE4 KDE5 Xfce; do
 
 	echo "Installing $d"
-	cd $d
-	bash install.sh
-	cd ..
+	(cd $d && bash install.sh)
 done;
