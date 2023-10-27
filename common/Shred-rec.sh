@@ -29,7 +29,7 @@ fi;
 
 RANDOM=`date +%k%d%M%j%S`
 
-for directory in $*; do
+for directory in "$@"; do
 
 	if ( test "x$directory" != "x" ); then
 
