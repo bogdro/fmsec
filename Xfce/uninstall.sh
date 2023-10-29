@@ -24,7 +24,9 @@
 
 . ../common/functions.bash
 
-fmsec_uninstall "$HOME/.local/share/Thunar/sendto"
+dir="$HOME/.local/share/Thunar/sendto"
+fmsec_uninstall "$dir"
+/bin/rm -f "$dir/Openssl-encrypt.sh"
 
 echo "Uninstall OK. Restart Thunar."
 exit 0

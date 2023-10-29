@@ -24,8 +24,9 @@
 
 . ../common/functions.bash
 
-fmsec_install "$HOME/.local/share/Thunar/sendto"
-[[ ! -e "$HOME/bin/Openssl-encrypt.sh" ]] && /bin/ln -s "$HOME/.local/share/Thunar/sendto/Openssl-encrypt.sh" "$HOME/bin/Openssl-encrypt.sh"
+dir="$HOME/.local/share/Thunar/sendto"
+fmsec_install "$dir"
+[[ ! -e "$HOME/bin/Openssl-encrypt.sh" ]] && /bin/ln -s "$dir/Openssl-encrypt.sh" "$HOME/bin/Openssl-encrypt.sh"
 
 echo "Install OK. Restart Thunar."
 exit 0
