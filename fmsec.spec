@@ -1,6 +1,6 @@
 # Special names here like {__make} come from /usr/lib/rpm/macros, /usr/lib/rpm/macros.rpmbuild
 
-%define fmsec_version 4.0
+%define fmsec_version 4.5
 %define fmsec_release 1
 %define fmsec_name fmsec
 %define fmsec_url https://fmsec.sourceforge.io

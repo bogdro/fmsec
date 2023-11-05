@@ -1,35 +1,78 @@
+2023-10-29	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec version 4.5
+	  Added extensions for running programs with LibHideIP, LibNetBlock
+	  and LibSecRm preloaded. Significant improvements in building and
+	  packaging - it is now possible to install system-wide and an RPM
+	  specification file for building RPM files has been added. Code
+	  quality updates. Updated copyright.
+	* KDE5/desktop/libhideip.desktop: Added the "Run under LibHideIP"
+	  action for KDE5 (Konqueror/Dolphin/Krusader).
+	* KDE5/desktop/libnetblock.desktop: Added the "Run under LibNetBlock"
+	  action for KDE5 (Konqueror/Dolphin/Krusader).
+	* KDE5/desktop/libsecrm.desktop: Added the "Run under LibSecRm"
+	  action for KDE5 (Konqueror/Dolphin/Krusader).
+	* Xfce/desktop/libhideip.desktop: Added the "Run under LibHideIP"
+	  action for Xfce (Thunar).
+	* Xfce/desktop/libnetblock.desktop: Added the "Run under LibNetBlock"
+	  action for Xfce (Thunar).
+	* Xfce/desktop/libsecrm.desktop: Added the "Run under LibSecRm"
+	  action for Xfce (Thunar).
+	* Xfce/uninstall.sh: Fix uninstalling Openssl-encrypt.sh.
+	* Xfce/install.sh: A common variable for the directory.
+	* common/functions.bash: Added new .desktop files.
+	* common/*.sh, Xfce/desktop/Openssl-encrypt.sh: Added quoting of
+	  parameters, as recommended by Codacy.
+	* common/Shred-rec.sh: Use another syntax for loops and corrected
+	  input parameter quoting, as recommended by Codacy.
+	* install-all.sh, uninstall-all.sh: Use a better method to change
+	  directories, as recommended by Codacy.
+	* Makefile: Removed forcing the GNU 'tar' format so that each 'tar'
+	  can be used for making packages. Allowing local (per-user) and global
+	  (system-wide) installation and uninstallation (only for KDE5 and
+	  Xfce right now). Added a variable holding the common files for
+	  dependencies and packaging.
+	* fmsec.spec: Added a spec file for building RPMs.
+	* INSTALL-FMSec.txt: Added global installation and uninstallation.
+	  Added using 'make' to install and uninstall.
+	* README: Added new supported operations.
+	* common/*,KDE3/*,KDE3/desktop/*,KDE4/*,KDE4/desktop/*,KDE5/*,
+	  KDE5/desktop/*,Xfce/*,Xfce/desktop/*,Makefile,install-all.sh,
+	  uninstall-all.sh: Updated copyright.
+	* README.md: Added an information file.
+
 2021-11-25	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec version 4.0
 	  Added suport for Thunar from Xfce 4.x (without TrueCrypt).
-	* common: moved all the common shell scripts to the "common" directory
+	* common: Moved all the common shell scripts to the "common" directory
 	* common/function.bash: a script with functions common to installers
 	  and uninstallers. Removed the 'unalias' commands in favour to using
 	  absolute paths.
 	* KDE[345]/*.sh: Moved all the common install/uninstall code to
 	  common/function.bash and just call the functions with the right
 	  arguments now.
-	* Makefile: started distributing the Makefile, currently used only to
-	  build the release packages
-	* Xfce: added a directory for Xfce's Thunar.
-	* install-all.sh, uninstall-all.sh: added un/installing Xfce
+	* Makefile: Started distributing the Makefile, currently used only to
+	  build the release packages.
+	* Xfce: Added a directory for Xfce's Thunar.
+	* install-all.sh, uninstall-all.sh: Added un/installing Xfce.
 
 2021-11-21	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec version 3.2
 	  Compatibility fixes with KDE5. Compatibility fixes with OpenSSL v3.
 	  Other small fixes.
-	* KDE5/desktop/*: added "/Krusader" to top comments.
-	* KDE5/desktop/*.desktop: removed unnecessary "Name" clauses
+	* KDE5/desktop/*: Added "/Krusader" to top comments.
+	* KDE5/desktop/*.desktop: Removed unnecessary "Name" clauses.
 	* KDE[345]/desktop/{Openssl-decrypt.sh,openssl-encrypt.desktop}:
-	  changed the cipher to AES-128. Not all OpenSSL versions now support
+	  Changed the cipher to AES-128. Not all OpenSSL versions now support
 	  the cipher I've previously chosen (Blowfish).
 
 2020-04-01	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec + Konq5Sec) version 3.1
 	  Fixes in the Shred-rec.sh script.
-	* KDE[345]/desktop/Shred-rec.sh: no longer needing to set IFS, using
+	* KDE[345]/desktop/Shred-rec.sh: No longer needing to set IFS, using
 	  a simple loop now. Skipping also the ".." element. Fix sorting.
 	  Removed unused variables.
 
@@ -41,47 +84,47 @@
 	* KDE[34]/desktop/*, KDE[34]/*.sh, install-all.sh, uninstall-all.sh:
 	  Added a note about FMSec and its homepage. Removed unnecessary
 	  trailing newlines.
-	* KDE[34]/*.sh: added explicit exit commands with exit codes.
-	* KDE[34]/desktop/TrueCrypt-mount.sh: removed the "-u" parameter from
+	* KDE[34]/*.sh: Added explicit exit commands with exit codes.
+	* KDE[34]/desktop/TrueCrypt-mount.sh: Removed the "-u" parameter from
 	  the TrueCrypt call (it was used only in early TrueCrypt versions).
 	  Fixed the name of the script. Added the exit command.
-	* KDE5/*: added files from Konq5Sec-2019-05-01 and modified to match
+	* KDE5/*: Added files from Konq5Sec-2019-05-01 and modified to match
 	  FMSec.
-	* KDE5/desktop/*.desktop: updated the files to support KDE5: new Icon
+	* KDE5/desktop/*.desktop: Updated the files to support KDE5: new Icon
 	  values
-	* KDE5/common.sh: a new file with values common to the installer
+	* KDE5/common.sh: A new file with values common to the installer
 	  and uninstaller scripts
-	* KDE5/install.sh: copied from KDE4/install.sh. Changed the
+	* KDE5/install.sh: Copied from KDE4/install.sh. Changed the
 	  destination path to match KDE5's default. Not checking for $KDEHOME
 	  anymore. Added details in case of partial failures of the script.
-	* KDE5/uninstall.sh: renamed from KDE4/uninstall.sh. Changed the
+	* KDE5/uninstall.sh: Renamed from KDE4/uninstall.sh. Changed the
 	  destination path to match KDE5's default. Not checking for $KDEHOME
 	  anymore.
 	* KDE5/common.sh, KDE5/desktop/veracrypt-mount.desktop,
 	  KDE5/desktop/VeraCrypt-mount.sh,
-	  KDE5/desktop/veracrypt-umount.desktop: added new menu items and
+	  KDE5/desktop/veracrypt-umount.desktop: Added new menu items and
 	  scripts for mounting and un-mounting volumes with VeraCrypt
 	  (a replacement for TrueCrypt).
-	* (2021-11-20) install-all.sh, uninstall-all.sh: added KDE5 support.
-	* (2021-11-20) INSTALL-FMSec.txt: updated with KDE5.
+	* (2021-11-20) install-all.sh, uninstall-all.sh: Added KDE5 support.
+	* (2021-11-20) INSTALL-FMSec.txt: Updated with KDE5.
 
 2013-10-28	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.5.
 	  Further updates in the KDE4 desktop files. Updated the installers.
-	* KDE[34]/install.sh: silence some warnings. Changed failure messages
+	* KDE[34]/install.sh: Silenced some warnings. Changed failure messages
 	  to "partial failures" in some places.
-	* KDE4/openssl-decrypt.desktop: change KDE's "konsole" to xterm
+	* KDE4/openssl-decrypt.desktop: Changed KDE's "konsole" to xterm
 	* KDE4/{openssl-encrypt.desktop, safeRemove.desktop,
 	  safeRemoveDir.desktop, truecrypt-mount.desktop,
-	  truecrypt-umount.desktop, wipefreespace.desktop}: un-quote the
+	  truecrypt-umount.desktop, wipefreespace.desktop}: Un-quote the
 	  commands and remove "exit"
 
 2012-03-31	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.4.
 	  Fixed the KDE4 desktop files.
-	* *.desktop: correctly quote the commands where needed, remove "bash"
+	* *.desktop: Correctly quote the commands where needed, remove "bash"
 
 2012-03-19	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
@@ -100,10 +143,10 @@
 
 	* FMSec (then - KonqSec + Konq4Sec) version 2.1.
 	  Fixed compatibility of the KDE4 desktop files.
-	* KDE4/*.desktop: fixed the "Actions" entry.
-	* KDE4/wipefreespace.desktop: fixed the "Actions" entry. Updated the
+	* KDE4/*.desktop: Fixed the "Actions" entry.
+	* KDE4/wipefreespace.desktop: Fixed the "Actions" entry. Updated the
 	  "MimeType" to include just binary files.
-	* (2021-11-19) INSTALL-FMSec.txt: updated with KDE4 and the "all"
+	* (2021-11-19) INSTALL-FMSec.txt: Updated with KDE4 and the "all"
 	  un/installation scripts.
 
 2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
@@ -111,17 +154,17 @@
 	* FMSec (then - KonqSec + Konq4Sec) version 2.0.
 	  Added support for KDE4 (Konqueror and Dolphin). Fixed the license
 	  texts. Other small fixes.
-	* KDE4/*.desktop: added the files to support KDE4: new Type,
+	* KDE4/*.desktop: Added the files to support KDE4: new Type,
 	  ServiceTypes, MimeType and Icon parameters, changed Exec lines to
 	  plain commands from dbus. Updated for compatibility with KDE4 -
 	  added "Name" parameters, fixed "Action" parameters.
-	* KDE4/install.sh: copied from KDE3/install.sh. Changed the
+	* KDE4/install.sh: Copied from KDE3/install.sh. Changed the
 	  destination path to match KDE4's default. Started using the name
 	  "Dolphin" for the file manager.
-	* KDE4/uninstall.sh: copied from KDE3/uninstall.sh. Changed the
+	* KDE4/uninstall.sh: Copied from KDE3/uninstall.sh. Changed the
 	  destination path to match KDE4's default. Started using the name
 	  "Dolphin" for the file manager.
-	* (2021-11-19) install-all.sh, uninstall-all.sh: added scripts that
+	* (2021-11-19) install-all.sh, uninstall-all.sh: Added scripts that
 	  install and uninstall FMSec for all supported environments.
 
 2010-04-18	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
@@ -129,26 +172,26 @@
 	* FMSec (then - KonqSec) version 1.0
 	  Renamed "wipe.desktop" to "safeRemove.desktop". Fixes in shell
 	  script names. Fixes in the installer and uninstaller.
-	* KonqSecInstall.sh: corrected checking for the user's and user's KDE
+	* KonqSecInstall.sh: Corrected checking for the user's and user's KDE
 	  home directory. Make the paths whitespace-safe. Unsetting the
 	  variables before exit.
-	* KonqSecUninstall.sh: corrected the script name. Corrected checking
+	* KonqSecUninstall.sh: Corrected the script name. Corrected checking
 	  for the user's and user's KDE home directory. Make the paths
 	  whitespace-safe. Unsetting the variables before exit.
 	* openssl-decrypt.desktop, safeRemoveDir.desktop,
-	  truecrypt-mount.desktop: corrected the called scripts' names.
-	* safeRemove.desktop: renamed the file from "wipe.desktop". Added the
+	  truecrypt-mount.desktop: Corrected the called scripts' names.
+	* safeRemove.desktop: Renamed the file from "wipe.desktop". Added the
 	  "-u" parameter to "shred".
 
 2010-01-24	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec (then - KonqSec) version 0.9
 	  Corrected the shredding script.
-	* Shred-rec.sh: corrected checking the number of parameters given.
+	* Shred-rec.sh: Corrected checking the number of parameters given.
 	  Added support for multiple parameters.
 
 2009-08-26	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
-	* FMSec (then - KonqSec) initial version (0.5): shredding files and
+	* FMSec (then - KonqSec) initial version (0.5): Shredding files and
 	  directories, decrypt and encrypt using OpenSSL, TrueCrypt volumes
 	  mount and un-mount, wipe free space. Installing scripts.
