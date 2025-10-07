@@ -2,7 +2,7 @@
 #
 # FMSec KDE5 uninstaller
 #
-# Copyright (C) 2019-2023 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2019-2025 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.

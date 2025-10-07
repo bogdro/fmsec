@@ -1,6 +1,6 @@
 # FMSec installers - common functions
 #
-# Copyright (C) 2021-2023 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021-2025 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
