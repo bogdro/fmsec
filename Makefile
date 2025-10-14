@@ -121,9 +121,11 @@ uninstall-global-rmdir:
 
 uninstall-global-KDE5:
 	$(shell cd KDE5/desktop/; for f in *.desktop; do $(RMDIR) $(GLOBAL_DESKTOP_DIR_KDE5)/$$f; done; cd ../..)
+	@echo Done
 
 uninstall-global-Xfce:
 	$(shell cd Xfce/desktop/; for f in *.{desktop,sh}; do $(RMDIR) $(GLOBAL_DESKTOP_DIR_XFCE)/$$f; done; cd ../..)
+	@echo Done
 
 uninstall-global: uninstall-global-KDE5 uninstall-global-Xfce uninstall-global-rmdir
 
