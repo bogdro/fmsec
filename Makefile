@@ -89,15 +89,16 @@ install-global-mkdir:
 install-global-KDE5: install-global-mkdir
 	$(MKDIR) $(GLOBAL_DESKTOP_DIR_KDE5)
 	$(COPY) KDE5/desktop/*.desktop $(GLOBAL_DESKTOP_DIR_KDE5)
+	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_KDE5)/*.desktop
 
 install-global-Xfce: install-global-mkdir
 	$(MKDIR) $(GLOBAL_DESKTOP_DIR_XFCE)
 	$(COPY) Xfce/desktop/*.desktop $(GLOBAL_DESKTOP_DIR_XFCE)
 	$(COPY) Xfce/desktop/*.sh $(GLOBAL_SHARE_DIR)
+	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_XFCE)/*.desktop
 
 install-global: install-global-mkdir install-global-KDE5 install-global-Xfce
 	$(COPY) common/*.sh $(GLOBAL_SHARE_DIR)
-	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_XFCE)/*.desktop
 
 ######################################### Uninstallation
 
