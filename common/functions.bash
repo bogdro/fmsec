@@ -35,9 +35,11 @@ SHFILES="Shred-rec.sh			\
 	Openssl-decrypt.sh		\
 	TrueCrypt-mount.sh		\
 	VeraCrypt-mount.sh		\
+	generate-cert.sh		\
 	"
 
-FILES="libhideip.desktop		\
+FILES="generate-cert.desktop		\
+	libhideip.desktop		\
 	libnetblock.desktop		\
 	libsecrm.desktop		\
 	openssl-decrypt.desktop		\
