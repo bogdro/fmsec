@@ -16,7 +16,8 @@ The operations are:
 - running programs with LibHideIP (https://libhideip.sourceforge.io/)
   preloaded,
 - running programs with LibNetBlock (https://libnetblock.sourceforge.io/)
-  preloaded.
+  preloaded,
+- generating digital certificates (X.509 / SSL / TLS / OpenSSL).
 
 FMSec homepage: https://fmsec.sourceforge.io/
 

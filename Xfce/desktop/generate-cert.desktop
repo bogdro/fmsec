@@ -1,6 +1,6 @@
-# "Mount using TrueCrypt" Konqueror/Dolphin context menu entry
+# "Generate a certificate" Thunar context menu entry
 #
-# Copyright (C) 2010-2025 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2025 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -21,14 +21,11 @@
 #
 
 [Desktop Entry]
-Type=Service
-ServiceTypes=KonqPopupMenu/Plugin
-#,application/octet-stream
-MimeType=application/octet-stream;
-Actions=mountTC;
-Icon=encrypted
-
-[Desktop Action mountTC]
-Name=Mount using TrueCrypt
-Icon=encrypted
-Exec=/usr/bin/konsole -e $HOME/bin/TrueCrypt-mount.sh %f
+Name=Generate a certificate
+Type=Application
+#Version=1.0
+#Encoding=UTF-8
+#ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Icon=application-certificate
+Exec=xterm -e "$HOME/bin/generate-cert.sh %f"

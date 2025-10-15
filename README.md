@@ -11,7 +11,8 @@ The operations are:
 -   wiping the free space on a filesystem using WipeFreeSpace (<https://wipefreespace.sourceforge.io/>),
 -   running programs with LibSecRm (<https://libsecrm.sourceforge.io/>) preloaded,
 -   running programs with LibHideIP (<https://libhideip.sourceforge.io/>) preloaded,
--   running programs with LibNetBlock (<https://libnetblock.sourceforge.io/>) preloaded.
+-   running programs with LibNetBlock (<https://libnetblock.sourceforge.io/>) preloaded,
+-   generating digital certificates (X.509 / SSL / TLS / OpenSSL).
 
 Read the info documentation in the package to get more information.
 

@@ -1,6 +1,6 @@
 # FMSec Makefile
 #
-# Copyright (C) 2021-2023 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2021-2025 Bogdan Drozdowski, bogdro (at) users . sourceforge . net
 #
 # This file is part of FMSec (File Manager SECurity), a set of extensions
 #  to file managers.
@@ -89,15 +89,16 @@ install-global-mkdir:
 install-global-KDE5: install-global-mkdir
 	$(MKDIR) $(GLOBAL_DESKTOP_DIR_KDE5)
 	$(COPY) KDE5/desktop/*.desktop $(GLOBAL_DESKTOP_DIR_KDE5)
+	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_KDE5)/*.desktop
 
 install-global-Xfce: install-global-mkdir
 	$(MKDIR) $(GLOBAL_DESKTOP_DIR_XFCE)
 	$(COPY) Xfce/desktop/*.desktop $(GLOBAL_DESKTOP_DIR_XFCE)
 	$(COPY) Xfce/desktop/*.sh $(GLOBAL_SHARE_DIR)
+	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_XFCE)/*.desktop
 
 install-global: install-global-mkdir install-global-KDE5 install-global-Xfce
 	$(COPY) common/*.sh $(GLOBAL_SHARE_DIR)
-	$(SED) 's#$$HOME/bin#$(GLOBAL_SHARE_DIR)/#g' $(GLOBAL_DESKTOP_DIR_XFCE)/*.desktop
 
 ######################################### Uninstallation
 
@@ -120,9 +121,11 @@ uninstall-global-rmdir:
 
 uninstall-global-KDE5:
 	$(shell cd KDE5/desktop/; for f in *.desktop; do $(RMDIR) $(GLOBAL_DESKTOP_DIR_KDE5)/$$f; done; cd ../..)
+	@echo Done
 
 uninstall-global-Xfce:
 	$(shell cd Xfce/desktop/; for f in *.{desktop,sh}; do $(RMDIR) $(GLOBAL_DESKTOP_DIR_XFCE)/$$f; done; cd ../..)
+	@echo Done
 
 uninstall-global: uninstall-global-KDE5 uninstall-global-Xfce uninstall-global-rmdir
 
