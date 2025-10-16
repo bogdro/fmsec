@@ -72,6 +72,7 @@ BuildRequires:	make
 %attr(755,-,-) %dir %{fmsec_prefix}/libexec/%{fmsec_name}
 %attr(755,-,-) %{fmsec_prefix}/libexec/%{fmsec_name}/*.sh
 
+%attr(644,-,-) %{fmsec_prefix}/share/kservices5/generate-cert.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/libhideip.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/libnetblock.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/libsecrm.desktop
@@ -85,6 +86,7 @@ BuildRequires:	make
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/veracrypt-umount.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/kservices5/wipefreespace.desktop
 
+%attr(644,-,-) %{fmsec_prefix}/share/Thunar/sendto/generate-cert.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/Thunar/sendto/libhideip.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/Thunar/sendto/libnetblock.desktop
 %attr(644,-,-) %{fmsec_prefix}/share/Thunar/sendto/libsecrm.desktop
