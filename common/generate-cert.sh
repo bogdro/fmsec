@@ -39,7 +39,7 @@ fi
 
 cd "$1" || exit 3
 
-if [ ! -e maincert_cert.der ]; then
+if [[ ! -e maincert_cert.der ]]; then
 	echo ===== Generating the main key/certificate
 	openssl req -x509 -days 10950 -newkey rsa:2048 \
 		-keyout maincert_key.pem \

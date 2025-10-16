@@ -95,6 +95,7 @@ function fmsec_install
 		fi
 
 	done;
+	return 0
 }
 
 function fmsec_uninstall
@@ -114,4 +115,6 @@ function fmsec_uninstall
 
 		[[ -L "$HOME/bin/$i" ]] && /bin/rm -f "$HOME/bin/$i"
 	done;
+
+	return 0
 }
