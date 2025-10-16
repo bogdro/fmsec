@@ -22,6 +22,8 @@ Author: Bogdan Drozdowski, bogdro (at) users . sourceforge . net
 
 License: GPLv2+
 
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=bogdro_fmsec)
+
 ----------------------------------------------------------------
 
 ## Compatibility ##
