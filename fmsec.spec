@@ -26,16 +26,20 @@ Group:		Security
 Source:		%{fmsec_name}-%{fmsec_version}.tar.gz
 #BuildRoot:	{_tmppath}/{fmsec_name}-build
 BuildArch:	noarch
+
 Requires:	bash
 Requires:	coreutils
 Requires:	findutils
 Requires:	openssl
 Requires:	perl
 Requires:	sed
+Requires:	xterm
+
 Requires:	libhideip
 Requires:	libnetblock
 Requires:	libsecrm
 Requires:	wipefreespace
+
 BuildRequires:	make
 
 %description
