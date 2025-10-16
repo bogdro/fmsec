@@ -46,9 +46,11 @@ BuildRequires:	make
 
 %build
 
-%post -p /usr/bin/update-desktop-database
+%post
+/usr/bin/update-desktop-database || true
 
-%postun -p /usr/bin/update-desktop-database
+%postun
+/usr/bin/update-desktop-database || true
 
 %install
 
