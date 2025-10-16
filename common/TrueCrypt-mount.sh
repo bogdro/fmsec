@@ -22,12 +22,12 @@
 #  along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-if ( test "x$1" = "x" ); then
+if [[ "x$1" = "x" ]]; then
 
 	echo -n "Enter TrueCrypt volume path: "
 	read v
 
-	if ( test "x$v" = "x" || ! test -e "$v" ); then
+	if [[ "x$v" = "x" || ! -e "$v" ]]; then
 
 		exit 1
 	fi
@@ -35,12 +35,12 @@ else
 	v="$1"
 fi;
 
-if ( test "x$2" = "x" ); then
+if [[ "x$2" = "x" ]]; then
 
 	echo -n "Enter destination directory: "
 	read d
 
-	if ( test "x$d" = "x" || ! test -e "$d" ); then
+	if [[ "x$d" = "x" || ! -e "$d" ]]; then
 
 		exit 2
 	fi

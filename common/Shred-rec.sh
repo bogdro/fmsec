@@ -22,7 +22,7 @@
 #  along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-if ( test $# -lt 1 ); then
+if [[ $# -lt 1 ]]; then
 
 	exit 1;
 fi;
@@ -31,7 +31,7 @@ RANDOM=`date +%k%d%M%j%S`
 
 for directory in "$@"; do
 
-	if ( test "x$directory" != "x" ); then
+	if [[ "x$directory" != "x" ]]; then
 
 		find "$directory" -type f -exec shred -u '{}' \;
 
@@ -45,7 +45,7 @@ for directory in "$@"; do
 
 			i=$REPLY
 
-			if ( [ "x$i" = "x." ] || [ "x$i" = "x.." ] ); then
+			if [[ "x$i" = "x." || "x$i" = "x.." ]]; then
 				continue;
 			fi
 
@@ -74,7 +74,7 @@ for directory in "$@"; do
 				i="$newname"
 				sync;
 			done;
-			if ( test "x$newname" != "x" ); then
+			if [[ "x$newname" != "x" ]]; then
 
 				rm -fr "$newname"
 			fi

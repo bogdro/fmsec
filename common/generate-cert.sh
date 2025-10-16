@@ -27,17 +27,17 @@
 #  along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-if ( test $# -lt 1 ); then
+if [[ $# -lt 1 ]]; then
 
 	exit 1;
 fi;
 
-if ( ! test -d "$1" ); then
+if [[ ! -d "$1" ]]; then
 
 	exit 2;
 fi
 
-cd $1
+cd "$1" || exit 3
 
 if [ ! -e maincert_cert.der ]; then
 	echo ===== Generating the main key/certificate
@@ -63,7 +63,7 @@ fi
 
 for ((i=0; i<4000000000; i++)); do
 
-	if [ ! -e cert$i.pem ]; then break; fi
+	if [[ ! -e cert$i.pem ]]; then break; fi
 done
 
 name=cert$i

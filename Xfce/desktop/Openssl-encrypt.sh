@@ -22,7 +22,7 @@
 #  along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-if ( test "x$1" = "x" ); then
+if [[ "x$1" = "x" ]]; then
 
 	exit 1;
 fi;

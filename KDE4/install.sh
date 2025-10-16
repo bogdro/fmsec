@@ -24,9 +24,9 @@
 
 . ../common/functions.bash
 
-if ( test -z "$KDEHOME" ); then
+if [[ -z "$KDEHOME" ]]; then
 
-	if ( test -d "$HOME/.kde" ); then
+	if [[ -d "$HOME/.kde" ]]; then
 
 		KDEHOME=$HOME/.kde
 	else
