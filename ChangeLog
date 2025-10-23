@@ -1,3 +1,25 @@
+2025-10-16	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* FMSec version 4.6
+	  Added actions to generate digital certificates (X.509 / SSL / TLS /
+	  OpenSSL) for secure communication. Fix KDE5 paths when installing
+	  globally. Build system improvements. Code quality improvements.
+	  Updated copyright.
+	* common/{generate-cert.sh,functions.bash}, fmsec.spec,
+	  {KDE5,Xfce}/desktop/generate-cert.desktop: Added actions to generate
+	  digital certificates.
+	* KDE3/{un,}install.sh, KDE4/{un,}install.sh, common/*.sh,
+	  Xfce/desktop/Openssl-encrypt.sh: Code quality improvements (Codacy,
+	  SonarQube).
+	* Makefile: Fix paths in scripts also for KDE5. Rearrange the fixing
+	  to specific targets. Avoid "Nothing to be done" warnings for
+	  shell-only targets.
+	* fmsec.spec: Make %post and %postun not fail. Added xterm as a
+	  dependency. Added a license block.
+	* common/*,KDE3/*,KDE3/desktop/*,KDE4/*,KDE4/desktop/*,KDE5/*,
+	  KDE5/desktop/*,Xfce/*,Xfce/desktop/*,Makefile,install-all.sh,
+	  uninstall-all.sh: Updated copyright.
+
 2023-10-29	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec version 4.5
@@ -44,7 +66,7 @@
 2021-11-25	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* FMSec version 4.0
-	  Added suport for Thunar from Xfce 4.x (without TrueCrypt).
+	  Added support for Thunar from Xfce 4.x (without TrueCrypt).
 	* common: Moved all the common shell scripts to the "common" directory
 	* common/function.bash: a script with functions common to installers
 	  and uninstallers. Removed the 'unalias' commands in favour to using

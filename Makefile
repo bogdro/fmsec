@@ -21,7 +21,7 @@
 #
 
 NAME = fmsec
-VER = 4.5
+VER = 4.6
 
 RMDIR = /bin/rm -fr
 # when using '-p', no error is generated when the directory exists
