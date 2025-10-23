@@ -7,12 +7,17 @@ The operations are:
 
 -   encryption and decryption using OpenSSL (<https://www.openssl.org/>),
 -   safe removing (shredding) files and directories,
--   mounting and unmounting TrueCrypt and VeraCrypt (<https://www.veracrypt.fr/en/>) volumes,
--   wiping the free space on a filesystem using WipeFreeSpace (<https://wipefreespace.sourceforge.io/>),
--   running programs with LibSecRm (<https://libsecrm.sourceforge.io/>) preloaded,
--   running programs with LibHideIP (<https://libhideip.sourceforge.io/>) preloaded,
--   running programs with LibNetBlock (<https://libnetblock.sourceforge.io/>) preloaded,
--   generating digital certificates (X.509 / SSL / TLS / OpenSSL).
+-   mounting and unmounting TrueCrypt and VeraCrypt
+    (<https://www.veracrypt.fr/en/>) volumes,
+-   wiping the free space on a filesystem using WipeFreeSpace
+    (<https://wipefreespace.sourceforge.io/>),
+-   running programs with LibSecRm (<https://libsecrm.sourceforge.io/>)
+    preloaded,
+-   running programs with LibHideIP (<https://libhideip.sourceforge.io/>)
+    preloaded,
+-   running programs with LibNetBlock (<https://libnetblock.sourceforge.io/>)
+    preloaded,
+-   generating digital certificates (X.509 / SSL / TLS / PKCS#12 / P12).
 
 Read the info documentation in the package to get more information.
 
@@ -49,8 +54,10 @@ FMSec supports the following file managers:
 
 ## WARNING ##
 
-The `dev` branch may contain code which is a work in progress and committed just for tests. The code here may not work properly.
+The `dev` branch may contain code which is a work in progress and committed
+just for tests. The code here may not work properly.
 
 The `master` branch may contain code which is committed just for quality tests.
 
-The tags, matching the official packages on SourceForge, should be the most reliable points.
+The tags, matching the official packages on SourceForge,
+should be the most reliable points.

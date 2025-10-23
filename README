@@ -17,7 +17,7 @@ The operations are:
   preloaded,
 - running programs with LibNetBlock (https://libnetblock.sourceforge.io/)
   preloaded,
-- generating digital certificates (X.509 / SSL / TLS / OpenSSL).
+- generating digital certificates (X.509 / SSL / TLS / PKCS#12 / P12).
 
 FMSec homepage: https://fmsec.sourceforge.io/
 
